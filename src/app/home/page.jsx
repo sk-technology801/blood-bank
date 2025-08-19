@@ -379,49 +379,7 @@ const BloodBankHome = () => {
         </div>
       </section>
 
-      {/* Contact Info Footer */}
-      <section className="py-12 bg-gray-800 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start">
-              <Phone className="mr-3" size={24} />
-              <div>
-                <div className="font-semibold">Emergency Hotline</div>
-                <button 
-                  onClick={() => handlePhoneCall('+15559110000')}
-                  className="text-red-400 hover:text-red-300 transition-colors duration-200"
-                >
-                  +1 (555) 911-BLOOD
-                </button>
-              </div>
-            </div>
-            <div className="flex items-center justify-center md:justify-start">
-              <MapPin className="mr-3" size={24} />
-              <div>
-                <div className="font-semibold">Main Center</div>
-                <button 
-                  onClick={() => handleNavigation('/locations')}
-                  className="text-red-400 hover:text-red-300 transition-colors duration-200"
-                >
-                  123 Health Ave, Medical District
-                </button>
-              </div>
-            </div>
-            <div className="flex items-center justify-center md:justify-start">
-              <Calendar className="mr-3" size={24} />
-              <div>
-                <div className="font-semibold">Operating Hours</div>
-                <button 
-                  onClick={() => handleNavigation('/contact')}
-                  className="text-red-400 hover:text-red-300 transition-colors duration-200"
-                >
-                  24/7 Emergency Services
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };

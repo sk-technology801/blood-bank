@@ -18,22 +18,7 @@ const Header = () => {
 
   return (
     <header className="bg-red-600 text-white shadow-md">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="text-2xl font-bold">
-          <Link href="/">Blood Bank</Link>
-        </div>
-        <nav className="flex space-x-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`hover:text-red-100 transition-colors ${pathname === link.href ? 'text-red-100 font-semibold' : ''}`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-      </div>
+     
     </header>
   );
 };
