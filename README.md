@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🌐 Full-Stack Next.js Website
 
-## Getting Started
+This project is a full-stack website built with Next.js 14.
+It includes multiple pages (Home, About, Contact, Donate, Eligibility) with backend APIs connected to MongoDB Atlas for data storage.
 
-First, run the development server:
+🚀 Features
 
-```bash
+Built with Next.js App Router
+
+MongoDB Atlas + Mongoose for database
+
+Fully functional Contact, Donate, and Eligibility forms
+
+Stores all form data in MongoDB Atlas (Compass)
+
+Clean and responsive frontend design
+
+🛠️ Tech Stack
+
+Frontend: Next.js 14, React
+
+Styling: CSS / Tailwind (depending on your project)
+
+Backend: Next.js API Routes
+
+Database: MongoDB Atlas with Mongoose
+
+📂 Project Structure
+src/
+ ├── app/
+ │   ├── about/        # About page
+ │   ├── contact/      # Contact form page
+ │   ├── donate/       # Donation form page
+ │   ├── eligibility/  # Eligibility form page
+ │   ├── api/          # Backend API routes
+ │   └── layout.jsx    # Layout wrapper
+ ├── components/       # Header, Footer, etc.
+ ├── lib/              # Database connection (mongodb.js)
+ ├── models/           # Mongoose models (Contact, Donate, Eligibility)
+
+⚙️ Setup Instructions
+1️⃣ Clone Repository
+git clone <your-repo-url>
+cd your-project
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Configure Environment Variables
+
+Create a .env.local file in the root directory:
+
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.7wg131x.mongodb.net/mywebsite?retryWrites=true&w=majority
+
+
+Replace <username> and <password> with your Atlas credentials.
+
+4️⃣ Run the Development Server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Now open http://localhost:3000
+ 🎉
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+📦 API Endpoints
 
-## Learn More
+POST /api/contact → Save contact form data
 
-To learn more about Next.js, take a look at the following resources:
+POST /api/donate → Save donation data
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+POST /api/eligibility → Save eligibility form data
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+🗄️ Database
 
-## Deploy on Vercel
+Data is stored in MongoDB Atlas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can also connect Atlas with MongoDB Compass to view records.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+👨‍💻 Author
+
+Developed by Sardar Saadi
+
+⚡ Future Upgrades:
+
+Admin Dashboard (view all Contact, Donate, Eligibility data from browser)
+
+Authentication for Admin Panel
