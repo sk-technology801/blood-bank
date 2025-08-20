@@ -1,45 +1,43 @@
-// src/app/admin/contact/page.jsx
 "use client";
 import { useEffect, useState } from "react";
 
-export default function AdminContacts() {
+export default function ContactPage() {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
     fetch("/api/contact")
-      .then((res) => {
-        if (!res.ok) return [];
-        return res.json();
-      })
-      .then((data) => setContacts(Array.isArray(data) ? data : []))
-      .catch(() => setContacts([]));
+      .then((res) => res.json())
+      .then((data) => setContacts(data))
+      .catch((err) => console.error("Error fetching contacts:", err));
   }, []);
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Contact Submissions</h1>
-      <table className="w-full border">
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Contact Messages</h1>
+      <table className="table-auto border-collapse border border-gray-400 w-full">
         <thead>
-          <tr className="bg-gray-200">
-            <th className="p-2 border">Name</th>
-            <th className="p-2 border">Email</th>
-            <th className="p-2 border">Message</th>
+          <tr>
+            <th className="border p-2">Name</th>
+            <th className="border p-2">Email</th>
+            <th className="border p-2">Message</th>
+            <th className="border p-2">Date</th>
           </tr>
         </thead>
         <tbody>
           {contacts.length > 0 ? (
             contacts.map((c) => (
               <tr key={c._id}>
-                <td className="p-2 border">{c.name}</td>
-                <td className="p-2 border">{c.email}</td>
-                <td className="p-2 border">{c.message}</td>
+                <td className="border p-2">{c.name}</td>
+                <td className="border p-2">{c.email}</td>
+                <td className="border p-2">{c.message}</td>
+                <td className="border p-2">
+                  {new Date(c.createdAt).toLocaleString()}
+                </td>
               </tr>
             ))
           ) : (
             <tr>
-              <td colSpan="3" className="p-2 border text-center text-gray-500">
-                No submissions found
-              </td>
+              <td colSpan="4" className="p-4 text-center">No messages found</td>
             </tr>
           )}
         </tbody>
